@@ -29,6 +29,8 @@ namespace RestWithASPNETUdemy
         {
             services.AddControllers();
 
+            var connection = Configuration["MySqlConnection:MySqlConnectionString"];
+
             //Dependecy
             services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
