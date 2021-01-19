@@ -1,36 +1,38 @@
 ﻿using RestWithASPNETUdemy.Model;
 using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using RestWithASPNETUdemy.Model.Context;
 
 namespace RestWithASPNETUdemy.Repository.Implementations
 {
-    public class PersonRepositoryImplementation : IPersonRepository
+    public class BooksRepositoryImplementation : IBooksRepository
     {
         private MySqlContext _context;
 
-        public PersonRepositoryImplementation(MySqlContext context)
+        public BooksRepositoryImplementation(MySqlContext context)
         {
             _context = context;
 
         }
 
-        public List<Person> FindAll()
+        public List<Books> FindAll()
         {
-            return _context.Person.ToList();
+            return _context.Books.ToList();
         }
 
-        public Person FindByID(long id)
+        public Books FindByID(long id)
         {
-            return _context.Person.SingleOrDefault((System.Linq.Expressions.Expression<Func<Person, bool>>)(p => (bool)p.Id.Equals(id)));
+            return _context.Books.SingleOrDefault((System.Linq.Expressions.Expression<Func<Books, bool>>)(b => (bool)b.Id.Equals(id)));
         }
 
-        public Person Create(Person person)
+        public Books Create(Books book)
         {
             try
             {
-                _context.Add(person);
+                _context.Add(book);
                 _context.SaveChanges();
 
             }
@@ -38,21 +40,21 @@ namespace RestWithASPNETUdemy.Repository.Implementations
             {
                 throw e;
             }
-            return person;
+            return book;
         }
-        public Person Update(Person person)
+        public Books Update(Books book)
         {
-            if (!Exists(person.Id))
+            if (!Exists(book.Id))
             {
                 return null;
             }
 
-            var result = _context.Person.SingleOrDefault((System.Linq.Expressions.Expression<Func<Person, bool>>)(p => (bool)p.Id.Equals((long)person.Id)));
+            var result = _context.Books.SingleOrDefault((System.Linq.Expressions.Expression<Func<Books, bool>>)(b => (bool)b.Id.Equals((long)book.Id)));
             if (result != null)
             {
                 try
                 {
-                    _context.Entry(result).CurrentValues.SetValues(person);
+                    _context.Entry(result).CurrentValues.SetValues(book);
                     _context.SaveChanges();
 
                 }
@@ -62,16 +64,16 @@ namespace RestWithASPNETUdemy.Repository.Implementations
                 }
             }
 
-            return person;
+            return book;
         }
         public void Delete(long id)
         {
-            var result = _context.Person.SingleOrDefault((System.Linq.Expressions.Expression<Func<Person, bool>>)(p => (bool)p.Id.Equals(id)));
+            var result = _context.Books.SingleOrDefault((System.Linq.Expressions.Expression<Func<Books, bool>>)(b => (bool)b.Id.Equals(id)));
             if (result != null)
             {
                 try
                 {
-                    _context.Person.Remove(result);
+                    _context.Books.Remove(result);
                     _context.SaveChanges();
 
                 }
@@ -83,7 +85,7 @@ namespace RestWithASPNETUdemy.Repository.Implementations
         }
         public bool Exists(long id)
         {
-            return _context.Person.Any((System.Linq.Expressions.Expression<Func<Person, bool>>)(p => (bool)p.Id.Equals(id)));
+            return _context.Books.Any((System.Linq.Expressions.Expression<Func<Books, bool>>)(b => (bool)b.Id.Equals(id)));
         }
     }
 }

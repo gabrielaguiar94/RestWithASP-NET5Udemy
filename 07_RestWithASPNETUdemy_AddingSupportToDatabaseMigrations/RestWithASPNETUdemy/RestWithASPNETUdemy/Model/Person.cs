@@ -19,6 +19,5 @@ namespace RestWithASPNETUdemy.Model
         public string Address { get; set; }
         [Column("gender")]
         public string Gender { get; set; }
-
     }
 }

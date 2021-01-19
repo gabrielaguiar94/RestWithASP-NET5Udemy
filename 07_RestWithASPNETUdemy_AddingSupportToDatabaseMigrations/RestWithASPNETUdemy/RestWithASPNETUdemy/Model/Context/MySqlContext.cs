@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNETUdemy.Model.Context
 {
@@ -18,6 +14,7 @@ namespace RestWithASPNETUdemy.Model.Context
 
         }
 
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Books> Books { get; set; }
     }
 }

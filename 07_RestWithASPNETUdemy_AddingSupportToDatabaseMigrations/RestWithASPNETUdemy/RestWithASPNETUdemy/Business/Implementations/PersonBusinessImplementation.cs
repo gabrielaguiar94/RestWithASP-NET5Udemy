@@ -1,10 +1,5 @@
 ﻿using RestWithASPNETUdemy.Model;
-using System;
-using System.Threading;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using RestWithASPNETUdemy.Model.Context;
 using RestWithASPNETUdemy.Repository;
 
 namespace RestWithASPNETUdemy.Business.Implementations

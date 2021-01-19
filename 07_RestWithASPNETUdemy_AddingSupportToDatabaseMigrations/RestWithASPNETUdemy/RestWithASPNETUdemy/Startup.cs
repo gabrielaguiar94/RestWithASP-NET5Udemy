@@ -53,9 +53,9 @@ namespace RestWithASPNETUdemy
             //Dependecy
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+            services.AddScoped<IBooksBusiness, BooksBusinessImplementation>();
+            services.AddScoped<IBooksRepository, BooksRepositoryImplementation>();
         }
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
