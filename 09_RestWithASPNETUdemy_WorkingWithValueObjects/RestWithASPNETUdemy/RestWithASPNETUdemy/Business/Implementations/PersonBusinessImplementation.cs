@@ -6,13 +6,13 @@ using RestWithASPNETUdemy.Data.Converter.Implementations;
 
 namespace RestWithASPNETUdemy.Business.Implementations
 {
-    public class PersonVOBusinessImplementation : IPersonBusiness
+    public class PersonBusinessImplementation : IPersonBusiness
     {
         private readonly IRepository<Person> _repository;
 
         private readonly PersonConverter _converter;
 
-        public PersonVOBusinessImplementation(IRepository<Person> repository)
+        public PersonBusinessImplementation(IRepository<Person> repository)
         {
             _repository = repository;
             _converter = new PersonConverter();

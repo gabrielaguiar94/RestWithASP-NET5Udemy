@@ -15,6 +15,7 @@ namespace RestWithASPNETUdemy.Business.Implementations
         public BooksBusinessImplementation(IRepository<Books> repository)
         {
             _repository = repository;
+            _converter = new BooksConverter();
         }
         public List<BooksVO> FindAll()
         {
