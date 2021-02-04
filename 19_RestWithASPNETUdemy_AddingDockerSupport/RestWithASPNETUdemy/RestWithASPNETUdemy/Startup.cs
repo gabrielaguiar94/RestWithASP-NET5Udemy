@@ -94,13 +94,15 @@ namespace RestWithASPNETUdemy
 
             services.AddControllers();
 
+            services.AddControllers().AddNewtonsoftJson();
+
             var connection = Configuration["MySqlConnection:MySqlConnectionString"];
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
 
-            /*if (Environment.IsDevelopment())
+            if (Environment.IsDevelopment())
             {
                 MigrateDataBase(connection);
-            }*/
+            }
 
             services.AddMvc(options =>
             {

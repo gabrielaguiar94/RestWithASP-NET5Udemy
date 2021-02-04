@@ -68,6 +68,7 @@ namespace RestWithASPNETUdemy.Business.Implementations
 
             var user = _repository.ValidateCredentials(username);
             if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
+            //user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
             {
                 return null;
             }
