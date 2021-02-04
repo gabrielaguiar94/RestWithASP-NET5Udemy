@@ -6,9 +6,9 @@
     <ProjectGuid>25f39b63-670b-47c3-8c66-fd59dbe2e1d0</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>rest-with-asp-net-udemy</DockerServiceName>
+    <DockerServiceName>restwithaspnetudemy</DockerServiceName>
   </PropertyGroup>
-  <ItemGroup>    
+  <ItemGroup>
     <None Include="docker-compose.yml" />
     <None Include=".dockerignore" />
   </ItemGroup>
