@@ -94,6 +94,8 @@ namespace RestWithASPNETUdemy
 
             services.AddControllers();
 
+            services.AddControllers().AddNewtonsoftJson();
+
             var connection = Configuration["MySqlConnection:MySqlConnectionString"];
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
 
