@@ -2,12 +2,6 @@
 {
     public class TokenVO
     {
-
-        public TokenVO(string accessToken, string refreshToken)
-        {            
-            AccessToken = accessToken;
-            RefreshToken = refreshToken;
-        }
         public TokenVO(bool authenticated, string created, string expiration, string accessToken, string refreshToken)
         {
             Authenticated = authenticated;
