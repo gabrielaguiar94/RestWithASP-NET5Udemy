@@ -21,4 +21,4 @@ deploy:
   on:
     branch: main
 notifications:
-  email: false
+  email: true
