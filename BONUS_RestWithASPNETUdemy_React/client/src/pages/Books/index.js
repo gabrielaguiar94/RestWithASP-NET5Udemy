@@ -23,9 +23,9 @@ export default function Books() {
 
   useEffect(() => {
       fetchMoreBooks();
-  },[accessToken,fetchMoreBooks]);  
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[accessToken]);  
+  
   async function fetchMoreBooks()  {
     const response = await api.get(`api/books/v1/asc/4/${page}`, authorization);
         setBooks([...books, ...response.data.list]);
